@@ -21,3 +21,97 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+import React from "react";
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div className="container">
+      < Header />
+    </div>
+  );
+}
+
+export default App;
+
+
+// // using class instead of function
+
+// class App extends React.Component {
+//   render() {
+//     return(
+//       <h1>task tracker</h1>
+//     )
+//   }
+// }
+
+// export default App;
+
+
+
+we can set default value for props likes below
+ex:  
+
+
+import React from 'react'
+
+const Header = ( {title} ) => {
+  return (
+    <header>
+      <h1>{title}</h1>
+    </header>
+  )
+}
+
+export default Header;
+ // or //
+ import React from 'react'
+
+const Header = ( props ) => {
+  return (
+    <header>
+      <h1>{props.title}</h1>
+    </header>
+  )
+}
+
+export default Header;
+
+Header.defaultProps = {
+  title: 'Task Tracker'
+  date: 23
+}
+
+we can set propTypes like string/number/boolean/symbol etc 
+ Header.propTypes = {
+ title: PropTypes.string.isRequired,
+ }
+
+// inline styling of components //
+ import React from 'react'
+
+const Header = ( props ) => {
+  return (
+    <header>
+      <h1 >{props.title}</h1>
+    </header>
+  )
+}
+
+// internal styling fo components //
+import React from 'react'
+
+const Header = ( props ) => {
+  return (
+    <header>
+      <h1 style={headerStyle}>{props.title}</h1>
+    </header>
+  )
+}
+
+const headerStyle = { 
+color: 'red', 
+backgroundColor:'black',
+}
